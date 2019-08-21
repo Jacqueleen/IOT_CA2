@@ -62,6 +62,9 @@ On your raspberrypi terminal window, you should see the following results as you
 This is what your setup should look like. The LCD should display 'Number of patients is' and the number of cards that have been scanned with the MFRC522 card reader.
 ![RFID final setup](outcome_rfid.jpg)
 
+When a patient taps their NFC card to enter the clinic, the following email is sent to the clinic administrator:
+![RFID email](email.png)
+
 ## 2. Setting up light, temperature and humidity sensors
 
 ### Hardware needed
@@ -72,6 +75,13 @@ This is what your setup should look like. The LCD should display 'Number of pati
 ### Setup the hardware
 Setup the hardware as shown in the Fritzing diagram below
 ![LDR/DHT11 Fritzing Diagram](fritz1.png)
+
+### Files you should have in the same folder
+Ensure that the following files are placed in the same folder
+* `dynamodb.py`
+* `jsonconverter.py`
+* `aws_pubsub_edited.py`
+* `server.py`
 
 ### Run the `aws_pubsub_edited.py` and `server.py` files
 **NOTE:** Ensure that in `aws_pubsub_edited.py`, you have changed the host name, rootCA path, certificate path, private key path, AWSIoTMQTTClient and deviceid accordingly to match your own AWS credentials.
@@ -84,6 +94,9 @@ On your raspberrypi, run `sudo python aws_pubsub_edited.py` in one terminal wind
 Open your preferred internet browser and type `<your ip address>:5000` into the address bar.
 
 ### Expected Outcome
+You should be able to see values being published constantly into the DynamoDB database table as shown in this image
+![DynamoDB Database values](db.png)
+
 You should see the following web application interface displaying the real-time, graphical and tabular values of light intensity, temperature and humidity. It also allows you to remotely toggle the room light (yellow LED) on and off.
 ![Web app interface 1](webapp1.png)
 
