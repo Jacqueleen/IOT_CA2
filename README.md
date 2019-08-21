@@ -12,7 +12,7 @@ Clinics are usually crowded and can have long waiting times. Sometimes, it would
 
 ### Setup the hardware
 Setup the hardware as shown in the Fritzing diagram below
-![RFID/LCD Fritzing Diagram](fritz2.png)
+![RFID/LCD Fritzing Diagram](/img/fritz2.png)
 
 ### Install the necessary libraries
 In your raspberry pi, install the rpi-lcd library to manipulate LCD display
@@ -57,13 +57,13 @@ On your raspberrypi, run `sudo python aws_pubsub_edited1.py` in one terminal win
 
 ### Expected Outcome
 On your raspberrypi terminal window, you should see the following results as you tap different RFID cards against the MFRC522 card reader.
-![RFID final outcome](outcome_rfid2.png)
+![RFID final outcome](/img/outcome_rfid2.png)
 
 This is what your setup should look like. The LCD should display 'Number of patients is' and the number of cards that have been scanned with the MFRC522 card reader.
-![RFID final setup](outcome_rfid.jpg)
+![RFID final setup](/img/outcome_rfid.jpg)
 
 When a patient taps their NFC card to enter the clinic, the following email is sent to the clinic administrator:
-![RFID email](email.png)
+![RFID email](/img/email.png)
 
 ## 2. Setting up light, temperature and humidity sensors
 
@@ -74,7 +74,7 @@ When a patient taps their NFC card to enter the clinic, the following email is s
 
 ### Setup the hardware
 Setup the hardware as shown in the Fritzing diagram below
-![LDR/DHT11 Fritzing Diagram](fritz1.png)
+![LDR/DHT11 Fritzing Diagram](/img/fritz1.png)
 
 ### Files you should have in the same folder
 Ensure that the following files are placed in the same folder
@@ -95,10 +95,10 @@ Open your preferred internet browser and type `<your ip address>:5000` into the 
 
 ### Expected Outcome
 You should be able to see values being published constantly into the DynamoDB database table as shown in this image
-![DynamoDB Database values](db.png)
+![DynamoDB Database values](/img/db.png)
 
 You should see the following web application interface displaying the real-time, graphical and tabular values of light intensity, temperature and humidity. It also allows you to remotely toggle the room light (yellow LED) on and off.
-![Web app interface 1](webapp1.png)
+![Web app interface 1](/img/webapp1.png)
 
 
 
