@@ -8,8 +8,10 @@ Clinics are usually crowded and can have long waiting times. Sometimes, it would
 ### Hardware needed:
 * MFRC522 card reader module x1
 * 16x2 LCD display x1
+* Red LED x1
 
-### Completed Fritzing Diagram
+### Setup the hardware
+Setup the hardware as shown in the Fritzing diagram below
 ![RFID/LCD Fritzing Diagram](fritz2.png)
 
 ### Install the necessary libraries
@@ -43,5 +45,44 @@ git clone https://github.com/pimylifeup/MFRC522-python.git
 cd ~/MFRC522-python
 sudo python setup.py install
 ```
+
+### Run the `aws_pubsub_edited1.py` and `read_rfid1.py` files
+**NOTE:** Ensure that in `aws_pubsub_edited1.py`, you have changed the host name, rootCA path, certificate path, private key path, AWSIoTMQTTClient and deviceid accordingly to match your own AWS credentials.
+
+The code in `read_rfid1.py` reads the NFC card values, counts the number of people entering and leaving, and displays the total number of people queueing inside the clinic waiting room on an LCD display.
+The code in `aws_pubsub_edited1.py` publishes the NFC card ID to the database in AWS DynamoDB and sends an email alert to the clinic administrator when customers enter the clinic.
+
+On your raspberrypi, run `sudo python aws_pubsub_edited1.py` in one terminal window, and `sudo python read_rfid.py` in a 2nd terminal window.
+
+
+### Expected Outcome
+![RFID final outcome](outcome_rfid2.png)
+![RFID final setup](outcome_rfid.jpg)
+
+## 2. Setting up light, temperature and humidity sensors
+
+### Hardware needed
+* LDR x1
+* DHT11 x1
+* Yellow LED x1
+
+### Setup the hardware
+Setup the hardware as shown in the Fritzing diagram below
+![LDR/DHT11 Fritzing Diagram](fritz1.png)
+
+### Run the `aws_pubsub_edited.py` and `server.py` files
+**NOTE:** Ensure that in `aws_pubsub_edited.py`, you have changed the host name, rootCA path, certificate path, private key path, AWSIoTMQTTClient and deviceid accordingly to match your own AWS credentials.
+
+The code in `aws_pubsub_edited.py` publishes the light intensity, temperature and humidity values to the database in AWS DynamoDB.
+The code in `server.py` starts the webserver on Flask. 
+
+On your raspberrypi, run `sudo python aws_pubsub_edited.py` in one terminal window, and `python server.py` in a 2nd terminal window.
+
+Open your preferred internet browser and type `<your ip address>:5000` into the address bar.
+
+### Expected Outcome
+
+![Web app interface 1](webapp1.png)
+
 
 
