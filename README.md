@@ -1,7 +1,7 @@
 # How to make a Smart Clinic using IoT devices
 
 ## 1. Overview
-Clinics are usually crowded and can have long waiting times. Sometimes, it would be helpful if the clinic could display the number of people in the queue so we can estimate our waiting time. This tutorial will show you how to read the RFID cards of patients going into a clinic and display the number of people who have already entered the clinic on an LCD display. This tutorial will also teach you how to remotely control the light source inside the clinic waiting room and get readings of light intensity, temperature and humidity of the waiting room.
+Clinics are usually crowded and can have long waiting times. Sometimes, it would be helpful if the clinic could display the number of people in the queue so we can estimate our waiting time. This tutorial will show you how to read the RFID cards of patients going into a clinic and display the number of people who have already entered the clinic on an LCD display. A red LED will light up beside the LCD when the clinic has reached maximum capacity. This tutorial will also teach you how to remotely control the light source inside the clinic waiting room and get readings of light intensity, temperature and humidity of the waiting room.
 
 ## 2. Setting up your RFID card reader & LCD display
 
