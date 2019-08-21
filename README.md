@@ -56,7 +56,10 @@ On your raspberrypi, run `sudo python aws_pubsub_edited1.py` in one terminal win
 
 
 ### Expected Outcome
+On your raspberrypi terminal window, you should see the following results as you tap different RFID cards against the MFRC522 card reader.
 ![RFID final outcome](outcome_rfid2.png)
+
+This is what your setup should look like. The LCD should display 'Number of patients is' and the number of cards that have been scanned with the MFRC522 card reader.
 ![RFID final setup](outcome_rfid.jpg)
 
 ## 2. Setting up light, temperature and humidity sensors
@@ -81,7 +84,7 @@ On your raspberrypi, run `sudo python aws_pubsub_edited.py` in one terminal wind
 Open your preferred internet browser and type `<your ip address>:5000` into the address bar.
 
 ### Expected Outcome
-
+You should see the following web application interface displaying the real-time, graphical and tabular values of light intensity, temperature and humidity. It also allows you to remotely toggle the room light (yellow LED) on and off.
 ![Web app interface 1](webapp1.png)
 
 
