@@ -100,5 +100,3 @@ You should be able to see values being published constantly into the DynamoDB da
 You should see the following web application interface displaying the real-time, graphical and tabular values of light intensity, temperature and humidity. It also allows you to remotely toggle the room light (yellow LED) on and off.
 ![Web app interface 1](/img/webapp1.png)
 
-
-YouTube video: https://youtu.be/0MMgFdN6VL0
